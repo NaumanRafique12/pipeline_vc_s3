@@ -87,7 +87,7 @@ def main():
     model = load_model('./model/model.pkl')
     
     # Load the test data
-    test_data = load_data('./data/features/test_tfidf.csv')
+    test_data = load_data('./data/features/test_bow.csv')
     
     # Prepare the data
     X_test, y_test = prepare_data(test_data)

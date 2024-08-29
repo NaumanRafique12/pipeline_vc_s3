@@ -33,7 +33,7 @@ def load_data(file_path: str) -> pd.DataFrame:
 def apply_bow(train_data: pd.DataFrame, test_data: pd.DataFrame, max_features: int) -> tuple:
     """Apply Bag of Words (BoW) using CountVectorizer."""
     try:
-        vectorizer = TfidfVectorizer(max_features=max_features)
+        vectorizer = CountVectorizer(max_features=max_features)
         X_train_bow = vectorizer.fit_transform(train_data['content'].values)
         X_test_bow = vectorizer.transform(test_data['content'].values)
         logging.info("Bag of Words applied successfully.")
@@ -92,8 +92,8 @@ def main():
     create_directory(data_path)
     
     # Save the processed data
-    save_data(train_df, os.path.join(data_path, "train_tfidf.csv"))
-    save_data(test_df, os.path.join(data_path, "test_tfidf.csv"))
+    save_data(train_df, os.path.join(data_path, "train_bow.csv"))
+    save_data(test_df, os.path.join(data_path, "test_bow.csv"))
 
 if __name__ == "__main__":
     try:

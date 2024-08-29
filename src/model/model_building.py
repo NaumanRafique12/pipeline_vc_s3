@@ -76,7 +76,7 @@ def main():
     params = load_params("params.yaml")
     
     # Load processed training data
-    train_data = load_data('./data/features/train_tfidf.csv')
+    train_data = load_data('./data/features/train_bow.csv')
     
     # Prepare data
     X_train, y_train = prepare_data(train_data)

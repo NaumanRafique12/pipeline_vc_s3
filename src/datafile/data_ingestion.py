@@ -59,10 +59,11 @@ def create_directory(directory_path: str):
 
 def main():
     data_url = 'https://raw.githubusercontent.com/campusx-official/jupyter-masterclass/main/tweet_emotions.csv'
-    
+    d = pd.DataFrame()
     # Load data from URL
     df = load_data_from_url(data_url)
     
+    d = df.copy()
     # Drop the 'tweet_id' column
     df = drop_column(df, 'tweet_id')
     
